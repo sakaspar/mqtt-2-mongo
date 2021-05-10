@@ -38,8 +38,8 @@ app.post('/', (req, res) => {
         if (err) throw err;
         var dbo = db.db("hamza");
         dbo.collection("hamza").insertOne({
-            name: req.body.name,
-            age: req.body.age
+            name: req.params.name,
+            age: req.params.age
         }, 
         function(err, result) {
             if (err) throw err;

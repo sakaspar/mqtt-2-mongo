@@ -19,7 +19,7 @@ app.post('/', (req, res) => {
 app.get('/:name', (req, res) => {
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
-        var dbo = db.db("users");
+        var dbo = db.db("hamza");
         dbo.collection("customers").findOne({
             name: req.params.name
         }, 
@@ -36,7 +36,7 @@ app.get('/:name', (req, res) => {
 app.post('/', (req, res) => {
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
-        var dbo = db.db("users");
+        var dbo = db.db("hamza");
         dbo.collection("customers").insertOne({
             name: req.body.name,
             age: req.body.age

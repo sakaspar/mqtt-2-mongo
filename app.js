@@ -29,7 +29,7 @@ app.get('/:name', (req, res) => {
         function(err, result) {
             if (err) throw err;
             res.json(result);
-            var found=True;
+             found=true;
             db.close();
         });
     });
@@ -57,14 +57,17 @@ if (found==false) {
   }
 
   app.put('/update/',function(req,res,next){
-    var db = req.db;
-    var collection = db.get('hamza');
-    collection.findOneAndUpdate({age: req.body.age}, {name: req.body.name} , {new:true},(err,doc)=>{
-        if(err)
-        console.log('Erreur');
+    MongoClient.connect(url, function(err, db) {
+        if (err) throw err;
+    var dbo = db.db("hamza");
+    dbo.collection("hamza").findOneAndUpdate({name: req.body.name}, { age: 23 } , {new:true},
+        function(err, result) {
+            if (err) throw err;
+            res.json(result);
+            db.close();
         
     });
-    });
+  })});
   
     
 

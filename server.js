@@ -2,8 +2,8 @@
  *
  * This NodeJS application listens to MQTT messages and records them to MongoDB
  *
- * @author  Dennis de Greef <github@link0.net>
- * @license MIT
+ *
+ *
  *
  */
 var mongodb  = require('mongodb');

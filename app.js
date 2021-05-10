@@ -32,7 +32,7 @@ app.get('/:name', (req, res) => {
             var found=True;
             /*Update*/
             var myquery = { age: "55" };
-            var newvalues = { $set: {name: "Mickey", age: "Canyon 23" } };
+            var newvalues = { $set: {name: "Mickey", age: " 23" } };
             dbo.collection("hamza").updateOne(myquery, newvalues, function(err, db) {
               if (err) throw err;
               console.log("1 document updated");

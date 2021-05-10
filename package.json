@@ -1,7 +1,7 @@
 {
     "name": "mqtt-mongo-recorder",
     "description": "This NodeJS application listens to MQTT messages and records them to MongoDB",
-    "author": "sakaspar <github@link0.net>",
+    "author": "sakaspar",
     "license": "MIT",
     "version": "1.0.0",
     "dependencies": {
@@ -10,6 +10,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/sakaspar/mqtt2mongo
+        "url": "https://github.com/sakaspar/mqtt-2-mongo
     }
 }

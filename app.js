@@ -30,14 +30,7 @@ app.get('/:name', (req, res) => {
             if (err) throw err;
             res.json(result);
             var found=True;
-            /*Update*/
-            var myquery = { age: "55" };
-            var newvalues = { $set: {name: "Mickey", age: " 23" } };
-            dbo.collection("hamza").updateOne(myquery, newvalues, function(err, db) {
-              if (err) throw err;
-              console.log("1 document updated");
-              db.close();
-            });
+            db.close();
         });
     });
 });
@@ -63,6 +56,15 @@ if (found==false) {
     
   }
 
+  app.put('/update/',function(req,res,next){
+    var db = req.db;
+    var collection = db.get('hamza');
+    collection.findOneAndUpdate({age: req.body.age}, req.body , {new:true},(err,doc)=>{
+        if(err)
+        console.log('Erreur');
+        
+    });
+    });
   
     
 

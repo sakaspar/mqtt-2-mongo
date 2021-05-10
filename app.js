@@ -59,7 +59,7 @@ if (found==false) {
   app.put('/update/',function(req,res,next){
     var db = req.db;
     var collection = db.get('hamza');
-    collection.findOneAndUpdate({age: req.body.age}, req.body , {new:true},(err,doc)=>{
+    collection.findOneAndUpdate({age: req.body.age}, {name: req.body.name} , {new:true},(err,doc)=>{
         if(err)
         console.log('Erreur');
         

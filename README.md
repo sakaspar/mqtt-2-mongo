@@ -34,4 +34,11 @@ $ mongo
 > db.message.find();
 ```
 
+Let's see what's in here 
+```bash
+$ mongo
+> use hamza
+> db.hamza.find();
+```
+
 

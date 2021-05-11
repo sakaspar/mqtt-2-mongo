@@ -55,22 +55,21 @@ if (found==false) {
     });
     
   }
-
-  app.put('/update/',function(req,res,next){
-    MongoClient.connect(url, function(err, db) {
-        if (err) throw err;
-    var dbo = db.db("hamza");
-    dbo.collection("hamza").findOneAndUpdate({name: req.body.name}, { age: 23 } , {new:true},
-        function(err, result) {
-            if (err) throw err;
-            res.json(result);
-            db.close();
+/*still error*/ 
+  app.put("/update").put(function(req, res) {
+    dbo.collection("hamza").replaceOne({name:"elyes"},
+    {age:"24"}).then((ans) => {
+        console.log("Successful");
+    }).then((err) => {
+        console.log(err);
+    })
+ }).catch((err) => {
+    // Printing the error message
+    console.log(err.Message);
+ })
         
-    });
-  })});
+   
   
-    
-
-
+  
 
   
